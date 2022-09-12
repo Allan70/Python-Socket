@@ -17,7 +17,7 @@ print("Waiting four connections")
 serversocket.listen(5)
 
 def client_thread(connection):
-    connection.send("Welcome to the server")
+    connection.send(str.encode("Welcome to the server"))
     while True:
         data = connection.recv(2048)
         reply = "Write I am server" + data.decode('utf-8')
@@ -28,7 +28,7 @@ def client_thread(connection):
     
 while True:
     client, address = serversocket.accept()
-    print("Connected to"+address[0]+str(address()))
+    print("Connected to"+" "+ address[0]+" "+str(address[1]))
     start_new_thread(client_thread,(client,))
     ThreadCount+=1
     print("Thread number %s" %str(ThreadCount))
