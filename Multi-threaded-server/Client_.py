@@ -13,7 +13,7 @@ except socket.error as e:
 Response = clientsocket.recv(1024)
 print(Response.decode('utf-8'))
 while True:
-    Input=input("Say something")
+    Input=input("Say something ")
     clientsocket.send(str.encode(Input))
     response=clientsocket.recv(1024)
     print(response.decode('utf-8'))
