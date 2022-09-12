@@ -16,7 +16,7 @@ while True:
         # Receive the request from the client
         data=client_socket.recv(1024)
         if not data or data.decode('utf-8') == 'END':
-            break;
+            break
         print("received from client client :%s" %data.decode('utf-8'))
         try:
             # Send a response to the client
